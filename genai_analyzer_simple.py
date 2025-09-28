@@ -36,7 +36,7 @@ class GenAIAnalyzer:
             'Identify collaborative tasks (those with multiple assignees or watchers) and note them separately.'
         ]
 
-    async def analyze_async(self, prompt: str) -> str:
+    async def analyze_async(self, prompt: str, temperature: float = 0.7) -> str:
         """
         Single method to analyze any prompt with the configured model.
         """
@@ -46,7 +46,7 @@ class GenAIAnalyzer:
                 contents=prompt,
                 config=types.GenerateContentConfig(
                     system_instruction=self.system_instructions,
-                    temperature=0.7,
+                    temperature=temperature,
                     max_output_tokens=8192,
                 )
             )
@@ -56,12 +56,12 @@ class GenAIAnalyzer:
             print(f"❌ Gemini API Error: {error_msg}")
             return error_msg
 
-    def analyze(self, prompt: str) -> str:
+    def analyze(self, prompt: str, temperature: float = 0.7) -> str:
         """
         Synchronous wrapper for analyze_async.
         """
         try:
-            return asyncio.run(self.analyze_async(prompt))
+            return asyncio.run(self.analyze_async(prompt, temperature))
         except Exception as e:
             print(f"Error in analyze: {str(e)}")
             return None

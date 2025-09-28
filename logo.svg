@@ -1,0 +1,14 @@
+<svg width="300" height="80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="80" fill="#ffffff" rx="10"/>
+
+  <!-- Icon Circle -->
+  <circle cx="40" cy="40" r="25" fill="#4A90E2"/>
+
+  <!-- Check mark icon -->
+  <path d="M 30 40 L 37 47 L 50 34" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Text -->
+  <text x="75" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2C3E50">ClickUp</text>
+  <text x="75" y="55" font-family="Arial, sans-serif" font-size="18" fill="#7F8C8D">Analyzer</text>
+</svg>
